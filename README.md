@@ -2,6 +2,10 @@
 
 ---
 
+#### AFTER INSTALLATION PLEASE READ THE FOLLOWING
+
+ALL THE FILES IN THIS REPOSITORY MAYBE CAN BE MODIFIED BY ME. BECAUSE I'M DOING TEST ALL THE TIME.
+
 This is a repository for my NixOS configuration. You can clone it and use it as a base for your own configuration. I not recommend you to do this, because you don't will learn, I recommend you to take some ideas for your configuration.
 
 My configuration is oriented to my needs (Hacking and Programming). I told you this to take it account.
