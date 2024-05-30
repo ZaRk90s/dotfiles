@@ -1,0 +1,49 @@
+{ pkgs, ... }:
+
+{
+  environment.systemPackages = with pkgs; [
+    neovim
+    openvpn
+    cargo
+    rustc
+    mariadb
+    wget
+    git
+    firefox
+    pfetch
+    hyperfine
+    feh
+    spotify
+    picom
+    bspwm
+    sxhkd
+    zig
+    kitty
+    zsh
+    polybar
+    rofi
+    discord
+    pavucontrol
+    xclip
+    unzip
+    nmap
+    burpsuite
+    zsh-syntax-highlighting
+    zsh-autosuggestions
+    xxd
+    tree
+    docker
+    python3
+    docker-compose
+    macchanger
+    jq
+    wfuzz
+    gobuster
+    hashcat
+    john
+    net-snmp
+    lsd
+    bat
+    nodejs
+  ];
+}
