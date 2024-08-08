@@ -2,10 +2,21 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+# MONITOR CONFIGURATION
 
-bspc config border_width         0
-bspc config window_gap          10
+laptop_monitor="eDP-1"
+external_monitor="HDMI-1-0"
+
+if [[ $(xrandr -q | grep "$laptop_monitor connected") ]]; then
+  xrandr --output $external_monitor --mode 1920x1080 --rate 120 --right-of $laptop_monitor
+  bspc monitor $laptop_monitor -d I II III IV V
+  bspc monitor $external_monitor -d VI VII VIII IX X
+else 
+  bspc monitor $laptop_monitor -d I II III IV V VI VII VIII IX X
+fi
+
+bspc config border_width         0.5
+bspc config window_gap           10
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
@@ -17,6 +28,5 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
-feh --bg-fill /home/zark90s/Desktop/zark90s/Wallpaper/wallhaven-ex338w.jpg
-polybar &
-picom &
+feh --bg-fill /home/zark90s/Desktop/zark90s/Wallpapers/wallpaperflare.com_wallpaper.jpg
+/home/zark90s/.config/polybar/launch.sh &
