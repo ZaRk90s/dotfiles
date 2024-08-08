@@ -2,7 +2,7 @@
 
 if bspc query -N -n focused.floating > /dev/null; then
 	step=20
-else 
+else
 	step=100
 fi
 
