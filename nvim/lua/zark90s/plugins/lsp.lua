@@ -27,8 +27,9 @@ return {
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "clangd",
+                "gopls",
                 "lua_ls",
-                "zls",
+                "zls"
             },
             handlers = {
                 function(server_name) -- default handler (optional)
