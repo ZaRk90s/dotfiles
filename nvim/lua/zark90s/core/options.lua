@@ -1,4 +1,4 @@
-# vim.opt.guicursor = ""
+-- vim.opt.guicursor = ""
 
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -26,14 +26,15 @@ vim.opt.signcolumn = "yes"
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "80"
+-- vim.opt.colorcolumn = "80"
 
 vim.opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 
--- Disble automatic comment continuation on new lines
+-- Disable automatic comment continuation on new lines
 vim.api.nvim_create_autocmd("BufEnter", {
-	pattern = "*",
-	callback = function()
-		vim.opt.formatoptions:remove("o") -- Prevents continuation of comments
-	end,
+    pattern = "*",
+    callback = function()
+        vim.opt.formatoptions:remove({ 'c', 'r', 'o' })
+    end,
 })
+
