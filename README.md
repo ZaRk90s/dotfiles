@@ -28,3 +28,6 @@ cp * ../
 cd ..
 rm -r dotfiles
 ```
+
+## Coming soon
+- [ ] Setup all the configuration from a Makefile
