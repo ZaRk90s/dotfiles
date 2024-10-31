@@ -14,11 +14,12 @@ In my case I'm using a virtual machine with Kali Linux.
 - bspwm and sxhkd (`sudo apt install bspwm sxhkd`)
 - zsh >= 5.9 version
 
-
 ## Installation
 Run this:
 
 ```bash
+sudo apt update
+sudo apt upgrade
 mkdir ~/.config 
 cd ~/.config
 git clone https://github.com/ZaRk90s/dotfiles
@@ -27,5 +28,3 @@ cp * ../
 cd ..
 rm -r dotfiles
 ```
-
-
