@@ -28,6 +28,7 @@ return {
             ensure_installed = {
                 "clangd",
                 "gopls",
+                "pylsp",
                 "lua_ls",
                 "zls"
             },
@@ -36,6 +37,19 @@ return {
                     require("lspconfig")[server_name].setup {
                         capabilities = capabilities
                     }
+                end,
+
+                pylsp = function()
+                    local lspconfig = require("lspconfig")
+                    lspconfig.pylsp.setup({
+                        settings = {
+                                pylsp = {
+                                    enable_inlay_hints = false,
+                                    enable_snippets = true,
+                                    warn_style = false
+                                },
+                            },
+                    })
                 end,
 
                 zls = function()
