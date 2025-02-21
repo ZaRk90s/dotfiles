@@ -1,2 +1,1 @@
-require("zark90s.core")
-require("zark90s.lazy")
+require("zark90s")

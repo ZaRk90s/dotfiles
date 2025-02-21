@@ -1,40 +1,57 @@
+local opt = vim.opt
+
+-- Cursor
 -- vim.opt.guicursor = ""
 
-vim.opt.number = true
-vim.opt.relativenumber = true
+-- Line numbers
+opt.number = true
+opt.relativenumber = true
 
--- tabs & indentation
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+-- Tabs & indentation
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.expandtab = true
+opt.autoindent = true
+opt.smartindent = true
 
-vim.opt.smartindent = true
+-- Line wrapping
+opt.wrap = true
 
-vim.opt.wrap = true
+-- Search settings
+opt.ignorecase = true
+opt.smartcase = true
+opt.hlsearch = true
+opt.incsearch = true
 
-vim.opt.swapfile = false
-vim.opt.backup = false
+-- Appearance
+opt.termguicolors = true
+opt.background = "dark"
+opt.signcolumn = "yes"
+opt.scrolloff = 8
+opt.sidescrolloff = 8
 
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
+-- Backspace
+opt.backspace = "indent,eol,start"
 
-vim.opt.termguicolors = true
+-- Clipboard
+opt.clipboard:append("unnamedplus")
 
-vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
+-- Split windows
+-- opt.splitright = true
+-- opt.splitbelow = true
 
-vim.opt.updatetime = 50
+-- Word wrap
+opt.linebreak = true
 
--- vim.opt.colorcolumn = "80"
+-- Security
+opt.swapfile = false
+opt.backup = false
+opt.undodir = vim.fn.expand("~/.vim/undodir")
+opt.undofile = true
 
-vim.opt.clipboard:append("unnamedplus") -- use system clipboard as default register
+-- Update time
+opt.updatetime = 50
+opt.timeout = true
+opt.timeoutlen = 300
 
--- Disable automatic comment continuation on new lines
-vim.api.nvim_create_autocmd("BufEnter", {
-    pattern = "*",
-    callback = function()
-        vim.opt.formatoptions:remove({ 'c', 'r', 'o' })
-    end,
-})
-
+opt.colorcolumn = "80"
