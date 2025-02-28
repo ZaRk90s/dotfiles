@@ -18,19 +18,18 @@
 		tree
 		inetutils
 		netcat
-    zip
-    unzip
+    		zip
+    		unzip
 
 		# Development tools
 		gcc
-    clang-tools
+    		clang-tools
 		python3
 		nodejs
 		zig
 		go
 
 		# Hacking tools
-		nmap
 		wireshark
 		# metasploit
 		burpsuite
@@ -38,12 +37,22 @@
 		tshark
 		john
 		hashcat
-		gobuster
-		wfuzz
 		aircrack-ng
 		ghidra
-        tcpdump
-        arp-scan
+		tcpdump
+		arp-scan
+
+		# (Hacking) Enumeration tools
+		nmap
+		wfuzz
+		gobuster
+		whois
+		theharvester
+		dnsrecon
+
+		# (Hacking) Dictionaries
+		seclists
+		rockyou
 
 		# Window manager and related
 		bspwm
@@ -56,9 +65,18 @@
 
 		# Additional utilities
 		firefox
-    hyperfine
-    openssl
-    xclip
+    		hyperfine
+    		openssl
+    		xclip
+
+		# Packages
+		(python3.withPackages (ps: with ps; [
+			numpy
+			pandas
+			requests
+			scapy
+			scipy
+		]))
 	];
 
     fonts.packages = with pkgs; [
