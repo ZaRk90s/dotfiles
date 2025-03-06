@@ -30,9 +30,9 @@ SAVEHIST=1000
 setopt SHARE_HISTORY
 
 # bat
-alias cat='batcat'
-alias catn='batcat --style=plain'
-alias catnp='batcat --style=plain --paging=never'
+alias cat='bat'
+alias catn='bat --style=plain'
+alias catnp='bat --style=plain --paging=never'
 
 # ls
 alias ll='lsd -lh --group-dirs=first'
@@ -68,11 +68,11 @@ function extractPorts() {
 }
 
 # Plugins
-if [ -f /usr/share/zsh-sudo/sudo.plugin.zsh ]; then
-    source /usr/share/zsh-sudo/sudo.plugin.zsh
-fi
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# if [ -f /usr/share/zsh-sudo/sudo.plugin.zsh ]; then
+#     source /usr/share/zsh-sudo/sudo.plugin.zsh
+# fi
+# source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Powerlevel10k
 source ~/powerlevel10k/powerlevel10k.zsh-theme

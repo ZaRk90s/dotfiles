@@ -22,7 +22,6 @@ bspc rule -a Screenkey manage=off
 ~/.config/polybar/./launch.sh &
 picom &
 bspc config border_width 0
-
-feh --bg-fill /home/zark90s/Desktop/zark90s/Wallpapers/dead_king.png
-
+xrandr --output Virtual-1 --mode 1920x1080
+feh --bg-fill /home/zark90s/Desktop/zark90s/wallpapers/think.jpg
 vmname LG3D &

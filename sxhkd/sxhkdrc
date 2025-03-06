@@ -4,11 +4,11 @@
 
 # terminal emulator
 super + Return
-    /home/zark90s/.local/bin/kitty
+  /run/current-system/sw/bin/kitty
 
 # Firefox
 super + shift + f
-    /usr/bin/firefox
+  /run/current-system/sw/bin/firefox
 
 # program launcher
 super + d
