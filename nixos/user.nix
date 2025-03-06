@@ -1,7 +1,7 @@
-{ config, pkgs, ... }: 
+{ config, pkgs, ... }:
 
 {
-
+	
 	# Define user account
 	users.users.zark90s = {
 		isNormalUser = true;
@@ -20,5 +20,4 @@
 		syntaxHighlighting.enable = true;
 		autosuggestions.enable = true;
 	};
-
 }

@@ -5,9 +5,8 @@
 	# Enable networking
 	networking = {
 		networkmanager.enable = true;
-		
-		# Change this to your desired hostname 
+	
+		# Change this to your desired hostname
 		hostName = "Wapply";
 	};
-
 }

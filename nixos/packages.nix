@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 
 {
-
 	# Allow unfree packages
 	nixpkgs.config.allowUnfree = true;
 
@@ -18,12 +17,13 @@
 		tree
 		inetutils
 		netcat
-    		zip
-    		unzip
+		zip
+		unzip
+    openldap
 
 		# Development tools
 		gcc
-    		clang-tools
+		clang-tools
 		python3
 		nodejs
 		zig
@@ -33,7 +33,7 @@
 		wireshark
 		# metasploit
 		burpsuite
-		# sqlmap
+		# sqlpmap
 		tshark
 		john
 		hashcat
@@ -41,7 +41,8 @@
 		ghidra
 		tcpdump
 		arp-scan
-
+    evil-winrm
+		
 		# (Hacking) Enumeration tools
 		nmap
 		wfuzz
@@ -49,11 +50,10 @@
 		whois
 		theharvester
 		dnsrecon
-
+		
 		# (Hacking) Dictionaries
 		seclists
 		rockyou
-
 		# Window manager and related
 		bspwm
 		sxhkd
@@ -62,25 +62,24 @@
 		kitty
 		feh
 		picom
-
+		
 		# Additional utilities
 		firefox
-    		hyperfine
-    		openssl
-    		xclip
-
+		hyperfine
+		openssl
+		xclip
 		# Packages
 		(python3.withPackages (ps: with ps; [
-			numpy
-			pandas
-			requests
-			scapy
-			scipy
-		]))
-	];
-
-    fonts.packages = with pkgs; [
-        (nerdfonts.override { fonts = [ "Hack" ]; })
+        numpy
+        pandas
+        requests
+        scapy
+        scipy
+        python-ldap  # Try this package name instead
+      ]))
     ];
 
+    fonts.packages = with pkgs; [
+      (nerdfonts.override { fonts = [ "Hack" ]; })
+    ];
 }

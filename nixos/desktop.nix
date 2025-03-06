@@ -5,7 +5,7 @@
 	# Enable X11 windowing system
 	services.xserver = {
 		enable = true;
-
+	
 		# Configure BSPWM
 		windowManager.bspwm = {
 			enable = true;
@@ -19,5 +19,4 @@
 			defaultSession = "none+bspwm";
 		};
 	};
-
 }
