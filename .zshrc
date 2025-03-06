@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Fix the Java Problem
 export _JAVA_AWT_VM_NONREPARENTING=1
 
@@ -30,9 +37,9 @@ SAVEHIST=1000
 setopt SHARE_HISTORY
 
 # bat
-alias cat='bat'
-alias catn='bat --style=plain'
-alias catnp='bat --style=plain --paging=never'
+alias cat='batcat'
+alias catn='batcat --style=plain'
+alias catnp='batcat --style=plain --paging=never'
 
 # ls
 alias ll='lsd -lh --group-dirs=first'
@@ -68,11 +75,11 @@ function extractPorts() {
 }
 
 # Plugins
-# if [ -f /usr/share/zsh-sudo/sudo.plugin.zsh ]; then
-#     source /usr/share/zsh-sudo/sudo.plugin.zsh
-# fi
-# source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [ -f /usr/share/zsh-sudo/sudo.plugin.zsh ]; then
+    source /usr/share/zsh-sudo/sudo.plugin.zsh
+fi
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Powerlevel10k
 source ~/powerlevel10k/powerlevel10k.zsh-theme

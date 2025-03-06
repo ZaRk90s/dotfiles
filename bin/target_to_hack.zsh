@@ -1,5 +1,5 @@
-#!/bin/sh
-
+#!/bin/bash
+ 
 ip_address=$(cat /home/zark90s/.config/bin/target | awk '{print $1}')
 machine_name=$(cat /home/zark90s/.config/bin/target | awk '{print $2}')
  
