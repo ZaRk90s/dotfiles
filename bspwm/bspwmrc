@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
@@ -19,6 +19,7 @@ bspc rule -a Screenkey manage=off
 
 # Custom configuration
 # feh --bg-fill /home/zark90s/Desktop/zark90s/Wallpapers
+setxkbmap -layout es
 ~/.config/polybar/./launch.sh &
 picom &
 bspc config border_width 0
