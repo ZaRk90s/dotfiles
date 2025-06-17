@@ -29,6 +29,9 @@ function configuration() {
     git clone https://github.com/zark90s/dotfiles; mv dotfiles/{bin,bspwm,kitty,nvim,polybar,sxhkd} /home/$username/.config; mv dotfiles/{.p10k.zsh,zshrc} /home/$username
     rm -r dotfiles
 
+    # Download powerlevel10k
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+
     # Change zark90s for your username in the files
     grep -ri "$username" /home/$username/.config | grep -vE "nvim|xfce4|gtk-3.0|ghidra|qterminal.org" | cut -d: -f1 | uniq | xargs -d '\n' -I{} sed -i "s/zark90s/$username/g" "{}"
 
