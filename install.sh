@@ -26,7 +26,7 @@ function configuration() {
     rm -r /usr/share/fonts/Hack.zip
 
     # Download dotfiles from ZaRk90s
-    mv ./{bin,bspwm,kitty,nvim,polybar,sxhkd} /home/$username/.config; mv ./{.p10k.zsh,zshrc} /home/$username
+    mv ./{bin,bspwm,kitty,nvim,polybar,sxhkd} /home/$username/.config; mv ./{.p10k.zsh,.zshrc} /home/$username
 
     # Download powerlevel10k
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /home/$username/powerlevel10k
@@ -41,8 +41,8 @@ function configuration() {
 
     # Attention
     echo -e "\n[+] Things you have to change manually:"
-    echo -e "\n\t1. /home/$username/.config/sxhkd/sxhkdrc location of the terminal"
-    echo -e "\n\t2. /home/$username/.config/bspwm/bspwmrc location of the wallpapers"
+    echo -e "\t1. /home/$username/.config/sxhkd/sxhkdrc location of the terminal"
+    echo -e "\t2. /home/$username/.config/bspwm/bspwmrc location of the wallpapers"
 
     echo -e "\n\n[++] Already installed all correctly. Change to BSPWM ;)\n\n"
 }
