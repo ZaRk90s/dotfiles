@@ -26,21 +26,25 @@ function configuration() {
     rm -r /usr/share/fonts/Hack.zip
 
     # Download dotfiles from ZaRk90s
-    git clone https://github.com/zark90s/dotfiles; mv dotfiles/{bin,bspwm,kitty,nvim,polybar,sxhkd} /home/$username/.config; mv dotfiles/{.p10k.zsh,zshrc} /home/$username
-    rm -r dotfiles
+    mv ./{bin,bspwm,kitty,nvim,polybar,sxhkd} /home/$username/.config; mv ./{.p10k.zsh,zshrc} /home/$username
 
     # Download powerlevel10k
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /home/$username/powerlevel10k
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 
     # Change zark90s for your username in the files
     grep -ri "$username" /home/$username/.config | grep -vE "nvim|xfce4|gtk-3.0|ghidra|qterminal.org" | cut -d: -f1 | uniq | xargs -d '\n' -I{} sed -i "s/zark90s/$username/g" "{}"
+    
+    # Same configuration for root user and username
+    ln -sf /home/$username/.zshrc ~/.zshrc
+    ln -sf /home/$username/.p10k.zsh ~/.p10k.zsh
 
     # Attention
-    echo "\n[+] Things you have to change manually:"
-    echo "\n\t1. /home/$username/.config/sxhkd/sxhkdrc location of the terminal"
-    echo "\n\t2. /home/$username/.config/bspwm/bspwmrc location of the wallpapers"
+    echo -e "\n[+] Things you have to change manually:"
+    echo -e "\n\t1. /home/$username/.config/sxhkd/sxhkdrc location of the terminal"
+    echo -e "\n\t2. /home/$username/.config/bspwm/bspwmrc location of the wallpapers"
 
-    echo "\n\n[++] Already installed all correctly. Change to BSPWM ;)\n\n"
+    echo -e "\n\n[++] Already installed all correctly. Change to BSPWM ;)\n\n"
 }
 
 if [ "$(echo $UID)" -eq 0 ]; then
